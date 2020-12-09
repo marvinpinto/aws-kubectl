@@ -1,11 +1,12 @@
 FROM python:alpine
-MAINTAINER Mike Petersen <mike@odania-it.de>
+LABEL org.opencontainers.image.source https://github.com/marvinpinto/aws-kubectl
 
 RUN apk --no-cache add curl
 ADD run.sh /run.sh
 
 # Install kubectl
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+# version: https://storage.googleapis.com/kubernetes-release/release/stable.txt
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.20.0/bin/linux/amd64/kubectl \
 	&& mv kubectl /usr/local/bin \
 	&& chmod +x /usr/local/bin/kubectl
 
@@ -16,3 +17,5 @@ ENV PATH /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
 
 # Install awscli
 RUN pip install awscli --upgrade --user
+
+ENTRYPOINT ["/run.sh"]
