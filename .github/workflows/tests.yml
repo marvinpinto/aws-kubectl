@@ -4,7 +4,7 @@ name: "Tests"
 on:
   push:
     branches-ignore:
-      - "master"
+      - "main"
 
 jobs:
   gh_tests:

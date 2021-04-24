@@ -4,7 +4,7 @@ name: "Latest Release"
 on:
   push:
     branches:
-      - "master"
+      - "main"
     tags-ignore:
       - "*"
 
