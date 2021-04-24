@@ -1,7 +1,7 @@
 The Docker Image contains the aws-cli and kubectl. It is used to update the AWS ECR credentials periodically in a kubernetes cluster.
 
 ```bash
-docker pull ghcr.io/marvinpinto/aws-kubectl:latest
+docker pull ghcr.io/opensentinel/aws-kubectl:latest
 ```
 
 # Setup
