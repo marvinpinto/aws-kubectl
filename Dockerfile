@@ -1,5 +1,5 @@
 FROM python:alpine
-LABEL org.opencontainers.image.source https://github.com/marvinpinto/aws-kubectl
+LABEL org.opencontainers.image.source https://github.com/opensentinel/aws-kubectl
 
 RUN apk --no-cache add curl
 ADD run.sh /run.sh
